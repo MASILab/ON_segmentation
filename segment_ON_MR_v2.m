@@ -33,6 +33,9 @@ function segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_pa
 % 20-Nov-2015 13:20:27 - initial creation
 %
 %------------- BEGIN CODE --------------
+
+add_path(genpath('utils'));
+
 narginchk(8,9);
 if nargin==9
     leave_out = varargin{1};
