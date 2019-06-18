@@ -10,11 +10,17 @@ Segmentation of the Optic Nerve in MR
 * [NiftyReg](http://cmictig.cs.ucl.ac.uk/wiki/index.php/NiftyReg)
 * ps2pdf (bundled with [Ghostscript](https://www.ghostscript.com))
 
-Input MR should be axial
+**Note:** Input MRI should be axial
 
 ## Step 1: Segment the Optic Nerve
-*segment_ON_MR*
-**segment\_ON\_MR\_v2**()
+### Perform Segmentation
+*/segment_ON_MR*
 
+**segment\_ON\_MR\_v2**(test\_images,atlas\_dir,ANTS\_path,niftyreg\_path,utils\_path,output\_dir,mipav\_path,jlf\_dir,varargin)
+
+### Generate Report
+*/segment_ON_MR/PDF*
+
+**ON\_MR\_segmentation\_pdf\_report\_v2\_0\_0**()
 
 ## Step 2: Segment the Optic Nerve Sheath
