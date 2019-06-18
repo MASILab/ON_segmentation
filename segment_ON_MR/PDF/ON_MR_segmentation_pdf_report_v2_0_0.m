@@ -10,7 +10,9 @@ function ON_MR_segmentation_pdf_report_v2_0_0(raw_fname, seg_fname, pdf_fname, t
 %        tmp_dir - the directory to store temporary output
 %        proj_name - the name of the project
 %        subj_name - the name of the subject
-%        expr_name = the name of the experiment
+%        expr_name - the name of the experiment
+%        atlas_path - path to atlases used for segmentation
+%        scan_type - name of MRI scan protocol
 %
 % Output: None.
 %

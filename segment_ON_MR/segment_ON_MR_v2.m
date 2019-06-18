@@ -6,13 +6,13 @@ function segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_pa
 %
 % Inputs:
 %    test_images - Input image(s) to be segmented
-%    atlas_dir - Directory of the atlas, should have subdirectories
-%    atlas_images and atlas_labels
+%    atlas_dir - Directory of the atlas, should have subdirectories atlas_images and atlas_labels
 %    ANTS_path - path to ANTs registration bin
 %    niftyreg_path - path to niftyreg for affine localization
 %    utils_path - path to matlab utilities in masimatlab
 %    output_dir - Directory to save the results
 %    mipav_path - Path to mipav (for calling jist for label fusion)
+%    jlf_dir - Path to JLF executable
 %    leave_out - (Optional) the atlas number (based on atlas image order)
 %    to be excluded, for use with cross validation.
 %
@@ -33,8 +33,6 @@ function segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_pa
 % 20-Nov-2015 13:20:27 - initial creation
 %
 %------------- BEGIN CODE --------------
-
-add_path(genpath('utils'));
 
 narginchk(8,9);
 if nargin==9
