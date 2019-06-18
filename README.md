@@ -12,15 +12,55 @@ Segmentation of the Optic Nerve in MR
 
 **Note:** Input MRI should be axial
 
-## Step 1: Segment the Optic Nerve
+## Usage
 ### Perform Segmentation
-*/segment_ON_MR*
+```matlab
+addpath('ON_segmentation/segment_ON_MR');
+addpath('ON_segmentation/segment_ON_MR/utils');
 
-**segment\_ON\_MR\_v2**(test\_images,atlas\_dir,ANTS\_path,niftyreg\_path,utils\_path,output\_dir,mipav\_path,jlf\_dir,varargin)
+segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_path,output_dir,mipav_path,jlf_dir,leave_out)
+```
+*test_images* - Input image(s) to be segmented
 
-### Generate Report
-*/segment_ON_MR/PDF*
+*atlas_dir* - Directory of the atlas, should have subdirectories atlas_images and atlas_labels
 
-**ON\_MR\_segmentation\_pdf\_report\_v2\_0\_0**()
+*ANTS_path* - path to ANTs registration bin
 
-## Step 2: Segment the Optic Nerve Sheath
+*niftyreg_path* - path to niftyreg for affine localization
+
+*utils_path* - path to matlab utilities in masimatlab
+
+*output_dir* - Directory to save the results
+
+*mipav_path* - Path to mipav (for calling jist for label fusion)
+
+*jlf_dir* - Path to JLF executable
+
+*leave_out* - (Optional) the atlas number (based on atlas image order) to be excluded, for use with cross validation.
+
+### Generate Segmentation Visualization Report
+```matlab
+addpath('ON_segmentation/segment_ON_MR/utils');
+addpath('ON_segmentation/segment_ON_MR/PDF');
+ON_MR_segmentation_pdf_report_v2_0_0(raw_fname, seg_fname, pdf_fname, tmp_dir, proj_name, subj_name, expr_name, atlas_path, scan_type)
+```
+*raw_fname* - the raw (intensity image filename -- .nii.gz)
+
+*seg_fname* - the estimated segmentation -- .nii.gz
+
+*pdf_fname* - the final pdf filename
+
+*tmp_dir* - the directory to store temporary output
+
+*proj_name* - the name of the project
+
+*subj_name* - the name of the subject
+
+*expr_name* - the name of the experiment
+
+*atlas_path* - path to atlases used for segmentation
+
+*scan_type* - name of MRI scan protocol
+
+### Perform Sheath Segmentation 
+**Note:** Report generated automatically
