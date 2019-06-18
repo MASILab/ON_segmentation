@@ -16,7 +16,6 @@ Segmentation of the Optic Nerve in MR
 ### Perform Segmentation
 ```matlab
 addpath('ON_segmentation/segment_ON_MR');
-addpath('ON_segmentation/segment_ON_MR/utils');
 
 segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_path,output_dir,mipav_path,jlf_dir,leave_out)
 ```
@@ -26,15 +25,15 @@ segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_path,output
 
 *ANTS_path* - path to ANTs registration bin
 
-*niftyreg_path* - path to niftyreg for affine localization
+*niftyreg_path* - path to niftyreg bin for affine localization
 
-*utils_path* - path to matlab utilities in masimatlab
+*utils_path* - 'ON_segmentation/segment_ON_MR/utils'
 
 *output_dir* - Directory to save the results
 
-*mipav_path* - Path to mipav (for calling jist for label fusion)
+*mipav_path* - Path to mipav
 
-*jlf_dir* - Path to JLF executable
+*jlf_dir* - Path to JLF executable (bin)
 
 *leave_out* - (Optional) the atlas number (based on atlas image order) to be excluded, for use with cross validation.
 
