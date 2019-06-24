@@ -3,13 +3,11 @@ Segmentation of the Optic Nerve in MR
 
 ## Requirements
 * Matlab w/ Image Processing Toolbox
-* Optic Nerve Atlas(es) (Cropped?)
+* Optic Nerve Atlas(es)
 * [ANTs](http://stnava.github.io/ANTs/)
 * [mipav](https://mipav.cit.nih.gov/)
-* JLF - Joint Label Fusion?
 * [NiftyReg](http://cmictig.cs.ucl.ac.uk/wiki/index.php/NiftyReg)
 * ps2pdf (bundled with [Ghostscript](https://www.ghostscript.com))
-* ON sheath probability tree
 
 **Note:** Input MRI should be axial
 
@@ -18,7 +16,7 @@ Segmentation of the Optic Nerve in MR
 ```matlab
 addpath('ON_segmentation/segment_ON');
 
-segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_path,output_dir,mipav_path,jlf_dir,leave_out)
+segment_ON_MR_v2(test_images, atlas_dir, ANTS_path, niftyreg_path, utils_path, output_dir, mipav_path, leave_out)
 ```
 *test_images* - Input image(s) to be segmented
 
@@ -33,8 +31,6 @@ segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_path,output
 *output_dir* - Directory to save the results
 
 *mipav_path* - Path to mipav
-
-*jlf_dir* - Path to JLF executable (bin)
 
 *leave_out* - (Optional) the atlas number (based on atlas image order) to be excluded, for use with cross validation.
 
