@@ -1,4 +1,4 @@
-function segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_path,output_dir,mipav_path,jlf_dir,varargin)
+function segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_path,output_dir,mipav_path,varargin)
 %SEGMENT_ON_MR_V2 - Run multi-atlas optic nerve segmentation pipeline on all image files in an
 %input directory using the atlases in atlas_dir
 %
@@ -12,7 +12,6 @@ function segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_pa
 %    utils_path - path to matlab utilities in masimatlab
 %    output_dir - Directory to save the results
 %    mipav_path - Path to mipav (for calling jist for label fusion)
-%    jlf_dir - Path to JLF executable
 %    leave_out - (Optional) the atlas number (based on atlas image order)
 %    to be excluded, for use with cross validation.
 %
@@ -33,6 +32,8 @@ function segment_ON_MR_v2(test_images,atlas_dir,ANTS_path,niftyreg_path,utils_pa
 % 20-Nov-2015 13:20:27 - initial creation
 %
 %------------- BEGIN CODE --------------
+
+jlf_dir = utils_path; % location of jointfusion executable
 
 narginchk(8,9);
 if nargin==9
