@@ -89,7 +89,7 @@ tmp = centroids(:,1);
 centroids(:,1) = centroids(:,2);
 centroids(:,2) = tmp;
 areas = cat(1,s.Area);
-[~,sort_idx] = sort(areas);
+[~,sort_idx] = sort(areas, 'descend');
 sorted_centroids = centroids(sort_idx,:);
 %Get the two biggest
 eye_centroids = sorted_centroids(1:2,:);
